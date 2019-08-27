@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/check">Check</a>
+  <a routerLink="/date">Date</a>
+  <a routerLink="/other-heroes">Other Heroes</a>
+  <a routerLink="/ng-for">Ng For</a>
+  <a routerLink="/ng-switch">Ng Switch</a>
+  <a routerLink="/grid">Grid</a>
+  <a routerLink="/lifecycle-hooks">Lifecycle-Hooks</a>
+  <a routerLink="/lazy-loading">Lazy-Loading</a>
+</nav>
+
+<mat-card>
+  <mat-card-content>
+    <router-outlet></router-outlet>
+  </mat-card-content>
+  <mat-card-footer>
+    <app-messages></app-messages>
+  </mat-card-footer>
+</mat-card>

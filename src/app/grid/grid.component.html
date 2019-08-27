@@ -1,0 +1,43 @@
+<mat-grid-list cols="4" rowHeight="50px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles; trackBy: trackByTile" 
+    [colspan]="tile.cols" 
+    [rowspan]="tile.rows" 
+    [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-selection-list class="content">
+  <h3 mat-subheader>trackByText: {{countWithTrackBy}}</h3>
+  <div 
+    #withTrackBy
+    *ngFor="let tile of tiles; trackBy: trackByTile"
+    [style.background]="tile.color">
+    {{tile.cols}} - {{tile.rows}} - {{tile.text}}
+  </div>
+</mat-selection-list>
+<mat-selection-list class="content">
+  <h3 mat-subheader>NoTrackBy: {{countWithoutTrackBy}} </h3>
+  <div 
+    #withoutTrackBy
+    *ngFor="let tile of tiles"
+    [style.background]="tile.color">
+    {{tile.cols}} - {{tile.rows}} - {{tile.text}}
+  </div>
+</mat-selection-list>
+<br/>
+<br/>
+<button 
+  mat-raised-button
+  (click)="changeTextTiles()"
+  >ChangeTextTiles</button>
+<button
+  mat-raised-button
+  (click)="resetTiles()"
+  >ResetTiles</button>
+<br/>
+<br/>
+<app-view-changes 
+  [(element)]="tiles[0].text"
+  (tileChange)="changeTextTiles()"></app-view-changes>

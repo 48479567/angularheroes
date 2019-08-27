@@ -1,0 +1,34 @@
+<mat-drawer-container class="example-container" autosize>
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Life Cycle Hooks
+    </button>
+    <button 
+      mat-icon-button aria-label="Example icon-button with a heart icon"
+      >
+      <!-- (click)="clearInterval()" -->
+      <mat-icon>camera</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="logger">
+    <lch-view-log></lch-view-log>
+  </div>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list role="list"> 
+      <mat-list-item role="listitem"
+        routerLink="./spy">Spy</mat-list-item> 
+      <mat-list-item role="listitem" routerLink="./changes">OnChanges</mat-list-item> 
+      <mat-list-item role="listitem" routerLink="./do-check">DoCheck</mat-list-item> 
+      <mat-list-item role="listitem" routerLink="./after-view">AfterView</mat-list-item> 
+      <mat-list-item role="listitem" routerLink="./after-content">AfterContent</mat-list-item> 
+      <mat-list-item role="listitem">Counter</mat-list-item> 
+      <mat-list-item role="listitem" routerLink="./">Peek-a-boo</mat-list-item> 
+    </mat-list>
+ </mat-drawer>
+</mat-drawer-container>
+
+

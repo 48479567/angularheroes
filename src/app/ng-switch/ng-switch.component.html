@@ -1,0 +1,38 @@
+<h5 mat-subheader>
+  current hero is: 
+  {{currentHero?.name}} - 
+  {{currentHero?.emotion}}
+</h5>
+<h6>{{$any(this).name}}</h6>
+<div (click)="this.name = 'enter'">
+  Print
+</div>
+<mat-radio-group
+  class="hero-radio-group"
+  [(ngModel)]="currentHero">
+  <mat-radio-button
+    class="hero-radio-btn"
+    *ngFor="let hero of heroes"
+    [value]="hero">{{hero.name}}
+    </mat-radio-button>
+</mat-radio-group>
+
+<div [ngSwitch]="currentHero?.emotion">
+  <app-happy-hero    *ngSwitchCase="'happy'"    [hero]="currentHero"></app-happy-hero>
+  <app-sad-hero      *ngSwitchCase="'sad'"      [hero]="currentHero"></app-sad-hero>
+  <app-confused-hero *ngSwitchCase="'confused'" [hero]="currentHero"></app-confused-hero>
+  <div *ngSwitchCase="'confused'">Are you as confused as {{currentHero.name}}?</div>
+  <app-unknown-hero  *ngSwitchDefault           [hero]="currentHero"></app-unknown-hero>
+</div>
+
+<app-hero-form
+  *ngIf="currentHero"
+  [hero]="currentHero">
+</app-hero-form>
+
+<app-select-favorite-hero [heroes]="heroes"></app-select-favorite-hero>
+
+
+
+
+

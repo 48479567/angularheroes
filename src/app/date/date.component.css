@@ -1,0 +1,9 @@
+button {
+  margin: 5px 15px;
+}
+
+input[type=number] {
+  width: 35px;
+  margin: 0 15px;
+}
+

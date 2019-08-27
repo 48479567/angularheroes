@@ -1,0 +1,69 @@
+<h2 class="example-h2">Checkbox configuration</h2>
+
+<section class="example-section">
+  <mat-checkbox 
+    class="example-margin" 
+    [checked]="input + 1"
+    >Checked
+  </mat-checkbox>
+</section>
+<section class="example-section">
+  <table border="2">
+    <tr>
+      <td [attr.colspan]="input + 1">One-Two</td>
+    </tr>
+    <tr>
+      <td>Five</td>
+      <td>Six</td>
+    </tr>
+  </table>
+  <button 
+    mat-raised-button 
+    color="primary" 
+    (click)="inputAdd()"
+    >input = {{input}}
+  </button>
+
+</section>
+<section class="example-section">
+  <button 
+    mat-flat-button
+    color="accent"
+    [attr.aria-label]="actionName" 
+    (myClick)="actionName=$event"
+    clickable>{{actionName}} with Aria</button>
+  {{actionName}}
+  
+</section>
+<section class="example-section">
+  <div>
+    <label for="without-ngmodel">Without NgModel:</label>
+    <input 
+      type="text"
+      id="without-ngmodel"
+      [value]="currentItem.name" 
+      (input)="currentItem.name=$event.target.value" />
+  </div>
+  <div>
+    <p>{{currentItem.name}}</p> 
+  </div>
+</section>
+<section class="example-section">
+  <img src="{{itemImageUrl}}" [style.display]="displayNone" />
+  <span [style.text-decoration]="lineThrough">{{item.name}}</span>
+  <button 
+    mat-stroked-button
+    color="accent"
+    aria-label="Example icon-button with a heart icon"
+    (click)="delete()">
+    Eliminar | Sombrear
+  </button>
+</section>
+<br />
+<br />
+<br />
+<section class="example-section">
+  <app-svg></app-svg>
+</section>
+
+

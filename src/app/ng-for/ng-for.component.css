@@ -1,0 +1,9 @@
+.inline {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+mat-chip {
+  font-size: 10px;
+  padding: 0 5px;
+}

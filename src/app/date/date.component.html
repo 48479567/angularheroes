@@ -1,0 +1,58 @@
+<div [style.font-size.px]="fontSizePx">
+  <button 
+    mat-raised-button
+    color="accent"
+    (click)="fontSizePx = fontSizePx + 1"
+    >+</button>
+  <button 
+    mat-raised-button
+    color="accent"
+    (click)="fontSizePx = fontSizePx - 1"
+    >-</button>
+  <p>Today is {{today | date}}</p>
+  <p>The date is {{today | date:'fullDate'}}</p>
+  <p>The time is {{today | date:'shortTime'}}</p>
+  <app-sizer [(size)]="fontSizePx"></app-sizer>
+</div>
+
+<br/>
+<!-- Para los cambios como [(ngModel)] se tiene que hacer la inserción desde la plantilla con (input) y [value]
+-->
+<!-- Casi de la misma forma funciona con
+  (input)="$event.target.value"
+  solo que no es tan eficiente.
+-->
+<input type="number" [(ngModel)]="num1" />
+<input type="number" [(ngModel)]="num2" />
+<input 
+  type="number" 
+  #externalNumber 
+  value="5"
+  (input)="externalNumber.value" />
+
+<p>The Average is iqual to: 
+  {{getAverage(externalNumber.value) | number: '1.0'}}</p>
+
+<button 
+  mat-raised-button
+  color="primary"
+  [attr.disabled]="isUnchanged? 'disabled' : null"
+  (click)="valueTag = '<b>Other</b>'"
+>Press</button>
+
+<button
+  mat-raised-button
+  color="accent"
+  aria-label="set italic text" 
+  [disabled]="isUnchanged"
+  (click)="valueTag = '<i>Italic</i>'"
+>Save</button>
+
+<button
+  mat-fab
+  color="warn"
+  (click)="isUnchanged = !isUnchanged"
+  ><i>ƒ({{isUnchanged}})</i></button>
+
+
+<p [innerHTML]="valueTag"></p>

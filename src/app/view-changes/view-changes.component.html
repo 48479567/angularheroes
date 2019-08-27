@@ -1,0 +1,24 @@
+<mat-form-field>
+  <input
+    matInput
+    #sndVal
+    [value]="element"
+    (input)="sendValue(sndVal.value)"
+    placeholder="Enter Value" />
+</mat-form-field>
+<button 
+  mat-raised-button 
+  color="primary" 
+  (click)="active = '<div>enter</div>'"
+  >Inactive
+</button>
+<button 
+  mat-raised-button 
+  color="accent" 
+  (click)="resetHero()"
+  >Reset
+</button>
+<div #OtherSelectDiv [innerHTML]="active"> Regular View</div>
+<div #selectDiv *ngFor="let hero of heroes; trackBy: trackByHeroes">
+  {{hero | json | uppercase}} 
+</div>

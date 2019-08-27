@@ -1,0 +1,49 @@
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip 
+    color="warn" 
+    selected
+    (click)="resetHeroes()"
+    >Reset Heroes
+  </mat-chip>
+  <mat-chip
+    color="secondary"
+    selected
+    (click)="changeNames()">
+    Change Names
+  </mat-chip>
+  <mat-chip 
+    color="primary" 
+    selected
+    (click)="changeIds()"
+    >Change Ids
+  </mat-chip>
+  <mat-chip 
+    color="accent" 
+    selected
+    (click)="clearTrackByCounts()"
+    >Clear counts
+  </mat-chip>
+</mat-chip-list>
+
+<div class="inline">
+  <mat-selection-list>
+    <h3 mat-subheader>Without TrackBy {{heroesNoTrackByCount}}</h3>
+    <div
+      #noTrackBy
+      *ngFor="let hero of heroes">
+      ({{hero.id}}) {{hero.name}}
+    </div>
+  </mat-selection-list>
+</div>
+
+<div class="inline">
+  <mat-selection-list>
+    <h3 mat-subheader>With TrackBy {{heroesWithTrackByCount}}</h3>
+    <div
+      #withTrackBy
+      *ngFor="let hero of heroes; trackBy: trackByHeroes">
+      ({{hero.id}}) {{hero.name}} 
+    </div>
+  </mat-selection-list>
+</div>
+

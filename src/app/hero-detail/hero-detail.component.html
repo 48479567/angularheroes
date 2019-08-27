@@ -1,0 +1,26 @@
+<div *ngIf="hero">
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name" />
+    </label>
+    
+  </div>
+  <div>
+    <app-ng-model
+      [currentHero]="hero">
+    </app-ng-model>
+  </div>
+  <div>
+    <button (click)="save()">save</button>
+    <button (click)="delete()">delete</button>
+    <button (click)="goBack()">go back</button>
+  </div>
+</div>
+<p>I turned the corner
+  <span *ngIf="hero">and saw {{hero.name}}. I waved</span>
+  and continued on my way
+</p>

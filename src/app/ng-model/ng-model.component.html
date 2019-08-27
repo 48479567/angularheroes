@@ -1,0 +1,51 @@
+<h3>NgModel examples</h3>
+<p>
+  Current Hero Name: {{currentHero.name}}
+</p>
+<mat-form-field>
+  <input 
+    matInput
+    [value]="currentHero.name"
+    (input)="updateCurrentHeroName($event)"
+    placeholder="Without NgModel">
+</mat-form-field>
+
+<mat-form-field>
+  <input 
+    matInput
+    #heroName
+    [value]="currentHero.name"
+    (input)="currentHero.name=heroName.value"
+    placeholder="Without NgModel, template variable">
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    matInput
+    [(ngModel)]="currentHero.name"
+    placeholder="[ngModel]">
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    matInput 
+    bindon-ngModel="currentHero.name"
+    placeholder="bindon-ngNodel">
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    matInput 
+    [ngModel]="currentHero.name"
+    (ngModelChange)="currentHero.name=$event"
+    placeholder="(ngModelChange)=''...name=$event''">
+</mat-form-field>
+
+<mat-form-field>
+  <input
+    matInput 
+    [ngModel]="currentHero.name"
+    (ngModelChange)="setUppercaseName($event)"
+    placeholder="(ngModelChange)=''setUppercaseName($event)''">
+</mat-form-field>
+

@@ -1,0 +1,13 @@
+:host {
+  height: 500px;
+}
+
+.content {
+  padding: 30px;
+}
+
+mat-drawer-container {
+  height: 100%;
+  width: 100%;
+  
+}
