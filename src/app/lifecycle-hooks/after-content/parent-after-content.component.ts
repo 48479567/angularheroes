@@ -3,16 +3,16 @@ import { Hero } from '../../../classes/hero.class';
 import { LoggerService } from '../../../services/logger.service';
 
 @Component({
-  selector: 'lch-parent-after-content',
+  selector: 'app-parent-after-content',
   template: `
       <br/>
       <h3>AfterContent</h3>
       <div *ngIf="show">
-        <lch-after-content>
-          <lch-child-after-content></lch-child-after-content>
-        </lch-after-content>
+        <app-after-content>
+          <app-child-after-content></app-child-after-content>
+        </app-after-content>
       </div>
-      
+
   `
 })
 export class ParentAfterContentComponent {

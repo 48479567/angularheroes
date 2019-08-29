@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { LoggerService } from '../../../services/logger.service';
 
 @Component({
-  selector: 'lch-view-log',
+  selector: 'app-view-log',
   template: `
     <br/>
     <mat-divider></mat-divider>
@@ -14,11 +14,11 @@ import { LoggerService } from '../../../services/logger.service';
       </mat-list-item>
     </mat-list>
 
-    
+
     <br/>
-    <lch-button-clear-log
+    <app-button-clear-log
       (clearChange)="clearLog()">
-    </lch-button-clear-log>
+    </app-button-clear-log>
   `
 })
 export class ViewLogComponent implements OnInit {

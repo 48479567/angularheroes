@@ -1,9 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'lch-button-clear-log',
+  selector: 'app-button-clear-log',
   template: `
-    <button 
+    <button
       mat-raised-button
       (click)="clearLog()"
     >Clear Log</button>

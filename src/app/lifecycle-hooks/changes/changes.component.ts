@@ -5,7 +5,7 @@ import { LoggerService } from '../../../services/logger.service';
 
 
 @Component({
-  selector: 'lch-changes',
+  selector: 'app-changes',
   template: `
     ____NgOnChanges____
   `
@@ -16,7 +16,7 @@ export class ChangesComponent implements OnChanges, OnInit {
   nameLifeCicleHooks: string;
 
   changeLog: Array<string>;
-  constructor (
+  constructor(
     private messageService: MessageService,
     private logger: LoggerService
   ) { }
@@ -26,11 +26,12 @@ export class ChangesComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    for (let propName in changes) {
-      let chng = changes[propName];
-      let cur = JSON.stringify(chng.currentValue);
-      let prev = JSON.stringify(chng.previousValue);
-      this.logger.log(`${propName}: currentValue =${cur}, previousValue = ${prev}`)
+    for (const propName in changes) {
+      const chng = changes[propName];
+      const cur = JSON.stringify(chng.currentValue);
+      const prev = JSON.stringify(chng.previousValue);
+      this.logger.log(`${propName}: currentValue =${cur}, previousValue = ${prev}`);
     }
   }
 }
+

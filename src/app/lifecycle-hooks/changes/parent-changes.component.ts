@@ -1,35 +1,35 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lch-parent-changes',
+  selector: 'app-parent-changes',
   template: `
     <br/>
-    <h3>OnChanges</h3> 
+    <h3>OnChanges</h3>
 
     <mat-form-field>
-      <input 
+      <input
         matInput
         placeholder="Hero Name"
-        #heroName 
+        #heroName
         (input)="heroName" />
     </mat-form-field>
     <mat-form-field>
-      <input 
+      <input
         matInput
         placeholder="Power"
-        #power 
+        #power
         (input)="power" />
     </mat-form-field>
     <br/>
-    <lch-changes 
-      [hero]="heroName.value" 
+    <app-changes
+      [hero]="heroName.value"
       [power]="power.value">
-    </lch-changes>
+    </app-changes>
   `
 })
 export class ParentChangesComponent {
 
-  constructor () { }
+  constructor() { }
 
-  
+
 }

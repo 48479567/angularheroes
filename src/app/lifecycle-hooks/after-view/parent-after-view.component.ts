@@ -1,20 +1,19 @@
-import { Component, AfterViewInit, AfterViewChecked, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, ViewChild } from '@angular/core';
 import { AfterViewComponent } from './after-view.component';
 import { Hero } from '../../../classes/hero.class';
 
 import { MessageService } from '../../../services/message.service';
 import { LoggerService } from '../../../services/logger.service';
 
-
 @Component({
-  selector: 'lch-parent-after-view',
+  selector: 'app-parent-after-view',
   template: `
       <br/>
-      <h3>AfterView</h3> 
-      <lch-after-view></lch-after-view>
+      <h3>AfterView</h3>
+      <app-after-view></app-after-view>
   `
 })
-export class ParentAfterViewComponent implements AfterViewInit, AfterViewChecked {
+export class ParentAfterViewComponent implements OnInit, AfterViewInit, AfterViewChecked {
   private hero: Hero;
   private nameLifeCicleHooks: string;
 
@@ -33,7 +32,7 @@ export class ParentAfterViewComponent implements AfterViewInit, AfterViewChecked
   }
 
   ngAfterViewInit(): void {
-    this.logger.log('AfterViewInit')
+    this.logger.log('AfterViewInit');
     this.doSomething();
   }
 
@@ -48,7 +47,7 @@ export class ParentAfterViewComponent implements AfterViewInit, AfterViewChecked
   }
 
   private doSomething(): void {
-    let c = this.viewChild.hero.name.length > 10 ? `That's a log name`: '';
+    const c = this.viewChild.hero.name.length > 10 ? `That's a log name` : '';
     setTimeout(() => this.viewChild.comment = c, 0);
   }
 

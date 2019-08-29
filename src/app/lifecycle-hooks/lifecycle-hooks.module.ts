@@ -19,7 +19,6 @@ import { ViewLogComponent } from './control-log/view-log.component';
 import { SpyDirective } from './spy/spy.directive';
 import { SpyComponent } from './spy/spy.component';
 
-
 @NgModule({
   declarations: [
     LifecycleHooksComponent,

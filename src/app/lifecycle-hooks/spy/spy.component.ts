@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../../classes/hero.class';
 import { HeroService } from '../../../services/hero.service';
 
 @Component({
-  selector: 'lch-spy',
+  selector: 'app-spy',
   template: `
     <mat-form-field>
       <input matInput placeholder="Hero Name" #heroName/>
@@ -20,10 +20,10 @@ import { HeroService } from '../../../services/hero.service';
     </mat-list>
   `
 })
-export class SpyComponent { 
+export class SpyComponent implements OnInit {
   heroes: Array<Hero>;
   newHeroName: string;
-  
+
   constructor(
     private heroService: HeroService
 
@@ -48,9 +48,6 @@ export class SpyComponent {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }
-
-  
-
 
 
 }

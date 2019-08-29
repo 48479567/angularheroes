@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Hero } from '../../../classes/hero.class';
 
 @Component({
-  selector: 'lch-child-after-content',
+  selector: 'app-child-after-content',
   template: `
     <br/>
     <mat-form-field>
-      <input 
+      <input
         matInput
         placeholder="Hero Name"
         [(ngModel)]="hero.name" />
@@ -14,7 +14,7 @@ import { Hero } from '../../../classes/hero.class';
     <br/>
   `
 })
-export class ChildAfterContentComponent { 
+export class ChildAfterContentComponent {
   hero: Hero;
 
   constructor() {

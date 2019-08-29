@@ -2,7 +2,7 @@ import {
   Component,
   OnInit,
   DoCheck,
-  OnChanges,
+  // OnChanges,
   Input,
   SimpleChanges } from '@angular/core';
 import { Hero } from '../../../classes/hero.class';
@@ -11,12 +11,13 @@ import { MessageService } from '../../../services/message.service';
 import { LoggerService } from '../../../services/logger.service';
 
 @Component({
-  selector: 'lch-do-check',
-  template: `
-    <br/>
-  `
+   selector: 'app-do-check',
+   template: `
+   <div>Do Check</div>
+   `,
+   styles: []
 })
-export class DoCheckComponent implements OnInit, DoCheck, OnChanges {
+export class DoCheckComponent implements OnInit, DoCheck {
   @Input() hero: Hero;
   @Input() power: string;
 
@@ -36,14 +37,14 @@ export class DoCheckComponent implements OnInit, DoCheck, OnChanges {
     this.logger.setNameLog('Do Check');
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    for (let propName in changes) {
-      let chng = changes[propName];
-      let cur = JSON.stringify(chng.currentValue);
-      let prev = JSON.stringify(chng.previousValue);
-      this.logger.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`)
-    }
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   for (let propName in changes) {
+  //     let chng = changes[propName];
+  //     let cur = JSON.stringify(chng.currentValue);
+  //     let prev = JSON.stringify(chng.previousValue);
+  //     this.logger.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`)
+  //   }
+  // }
 
   ngDoCheck(): void {
 

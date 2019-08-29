@@ -12,7 +12,7 @@ import { LoggerService } from '../../../services/logger.service';
 
 
 @Component({
-  selector: 'lch-after-content',
+  selector: 'app-after-content',
   template: `
     <br/>
     _____After Content____
