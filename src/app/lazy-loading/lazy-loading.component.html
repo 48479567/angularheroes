@@ -1,12 +1,18 @@
 <mat-drawer-container class="example-container" autosize>
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
+    <button type="button" mat-button (click)="drawer.toggle(); condition = !condition">
       Life Cycle Hooks
     </button>
-    <!-- <button
-      mat-icon-button aria-label="Example icon-button with a heart icon">
-      <mat-icon>camera</mat-icon>
-    </button> -->
+    <div *appUntil="condition">
+      <button
+        mat-icon-button
+        aria-label="Example icon-button with a heart icon">
+        <mat-icon>camera</mat-icon>
+      </button>
+    </div>
+    <div>
+      {{textResult.angular[0].code}}
+    </div>
   </div>
   <mat-divider></mat-divider>
   <div class="content">

@@ -1,0 +1,7 @@
+{ "angular" : [
+    { "title": "directive",
+      "description": "the directive until show the same name into setter method and class name",
+      "code": "selector: '[appUntil]'...\n @Input() set appUntil(condition: boolean) {..."
+    }
+  ]
+}

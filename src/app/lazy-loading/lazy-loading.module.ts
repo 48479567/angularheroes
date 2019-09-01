@@ -7,6 +7,7 @@ import { AdBannerComponent } from './entry-dinamic/ad-banner.component';
 import { HeroJobAdComponent } from './entry-dinamic/hero-job-ad.component';
 import { HeroProfileComponent } from './entry-dinamic/hero-profile.component';
 import { EntryDinamicComponent } from './entry-dinamic/entry-dinamic.component';
+import { UntilDirective } from './until/until.directive';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { EntryDinamicComponent } from './entry-dinamic/entry-dinamic.component';
     AdBannerComponent,
     HeroJobAdComponent,
     HeroProfileComponent,
-    EntryDinamicComponent
+    EntryDinamicComponent,
+    UntilDirective,
 
 
   ],
